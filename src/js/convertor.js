@@ -20,7 +20,7 @@ import codeBlockManager from './codeBlockManager';
 
 const markdownitHighlight = new MarkdownIt({
   html: true,
-  breaks: true,
+  breaks: false,
   quotes: '“”‘’',
   langPrefix: 'lang-',
   highlight(codeText, type) {
@@ -29,7 +29,7 @@ const markdownitHighlight = new MarkdownIt({
 });
 const markdownit = new MarkdownIt({
   html: true,
-  breaks: true,
+  breaks: false,
   quotes: '“”‘’',
   langPrefix: 'lang-'
 });

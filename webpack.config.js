@@ -43,7 +43,7 @@ const BANNER = [
   `@license ${pkg.license}`
 ].join('\n');
 
-const defaultConfigs = Array(isDevServer ? 1 : 5).fill(0).map(() => {
+const defaultConfigs = Array(isDevServer ? 1 : 6).fill(0).map(() => {
   return {
     cache: false,
     output: {
@@ -278,6 +278,22 @@ if (isDevServer) {
   defaultConfigs[4].output.libraryTarget = 'umd';
   if (isProduction) {
     defaultConfigs[4].plugins.push(new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: `${ANALYZER_DIR}/stats-${pkg.version}.html`
+    }));
+  }
+
+  // Build with Deps (no jquery)
+  defaultConfigs[5].entry = {
+    'Editor-full-no-jquery': ENTRY_MAIN,
+  };
+  defaultConfigs[5].externals = [{
+    jquery: defaultConfigs[5].externals[0].jquery
+  }];
+  defaultConfigs[5].output.library = NAME_SPACE;
+  defaultConfigs[5].output.libraryTarget = 'umd';
+  if (isProduction) {
+    defaultConfigs[5].plugins.push(new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       reportFilename: `${ANALYZER_DIR}/stats-${pkg.version}.html`
     }));
