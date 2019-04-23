@@ -16,6 +16,7 @@ const SafeUmdPlugin = require('safe-umd-webpack-plugin');
 const ENTRY_MAIN = './src/js/index.js';
 const ENTRY_VIEWER = './src/js/indexViewer.js';
 const ENTRY_MAIN_ALL = './src/js/indexAll.js';
+const ENTRY_MAIN_SELECT_EXT = './src/js/indexSelectExt.js';
 const ENTRY_VIEWER_ALL = './src/js/indexViewerAll.js';
 const ENTRY_EXT_CHART = './src/js/extensions/chart/chart.js';
 const ENTRY_EXT_UML = './src/js/extensions/uml.js';
@@ -283,19 +284,18 @@ if (isDevServer) {
     }));
   }
 
-  // Build with Deps (no jquery)
+  // Build with extensions
   defaultConfigs[5].entry = {
-    'Editor-full-no-jquery': ENTRY_MAIN,
+    'Editor-full-ext': ENTRY_MAIN_SELECT_EXT
   };
-  defaultConfigs[5].externals = [{
-    jquery: defaultConfigs[5].externals[0].jquery
-  }];
+  defaultConfigs[5].externals.length = 0;
   defaultConfigs[5].output.library = NAME_SPACE;
   defaultConfigs[5].output.libraryTarget = 'umd';
+  defaultConfigs[1].plugins.push(new webpack.IgnorePlugin(/extensions\/chart/,/extensions\/mark/));
   if (isProduction) {
     defaultConfigs[5].plugins.push(new BundleAnalyzerPlugin({
       analyzerMode: 'static',
-      reportFilename: `${ANALYZER_DIR}/stats-${pkg.version}.html`
+      reportFilename: `${ANALYZER_DIR}/stats-${pkg.version}-all.html`
     }));
   }
 }
