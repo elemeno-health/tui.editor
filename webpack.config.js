@@ -104,68 +104,7 @@ defaultConfigs[0].plugins.push(new CopyWebpackPlugin([ENTRY_IMAGE_DIR]));
 defaultConfigs[0].entry = {
   'Editor-full-ext': ENTRY_MAIN_SELECT_EXT
 };
-defaultConfigs[0].externals = [{
-  // 'tui-color-picker': {
-  //   commonjs: 'tui-color-picker',
-  //   commonjs2: 'tui-color-picker',
-  //   amd: 'tui-color-picker',
-  //   root: ['tui', 'colorPicker']
-  // },
-  // 'jquery': {
-  //   commonjs: 'jquery',
-  //   commonjs2: 'jquery',
-  //   amd: 'jquery',
-  //   root: ['$']
-  // },
-  // 'tui-code-snippet': {
-  //   commonjs: 'tui-code-snippet',
-  //   commonjs2: 'tui-code-snippet',
-  //   amd: 'tui-code-snippet',
-  //   root: ['tui', 'util']
-  // },
-  // 'tui-chart': {
-  //   commonjs: 'tui-chart',
-  //   commonjs2: 'tui-chart',
-  //   amd: 'tui-chart',
-  //   root: ['tui', 'chart']
-  // },
-  // 'plantuml-encoder': {
-  //   commonjs: 'plantuml-encoder',
-  //   commonjs2: 'plantuml-encoder',
-  //   amd: 'plantuml-encoder',
-  //   root: ['plantumlEncoder']
-  // },
-  'highlight.js': {
-    commonjs: 'highlight.js',
-    commonjs2: 'highlight.js',
-    amd: 'highlight.js',
-    root: ['hljs']
-  },
-  'markdown-it': {
-    commonjs: 'markdown-it',
-    commonjs2: 'markdown-it',
-    amd: 'markdown-it',
-    root: ['markdownit']
-  },
-  // 'squire-rte': {
-  //   commonjs: 'squire-rte',
-  //   commonjs2: 'squire-rte',
-  //   amd: 'squire-rte',
-  //   root: ['Squire']
-  // },
-  // 'codemirror': {
-  //   commonjs: 'codemirror',
-  //   commonjs2: 'codemirror',
-  //   amd: 'codemirror',
-  //   root: ['CodeMirror']
-  // },
-  // 'to-mark': {
-  //   commonjs: 'to-mark',
-  //   commonjs2: 'to-mark',
-  //   amd: 'to-mark',
-  //   root: ['toMark']
-  // }
-}]
+defaultConfigs[0].externals = []
 defaultConfigs[0].output.library = NAME_SPACE;
 defaultConfigs[0].output.libraryTarget = 'umd';
 if (isProduction) {
