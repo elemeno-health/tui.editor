@@ -3,6 +3,28 @@
 
 [![github version](https://img.shields.io/github/release/nhn/tui.editor.svg)](https://github.com/nhn/tui.editor/releases/latest) [![npm version](https://img.shields.io/npm/v/tui-editor.svg)](https://www.npmjs.com/package/tui-editor) [![bower version](https://img.shields.io/bower/v/tui-editor.svg)](https://github.com/nhn/tui.editor/releases/latest) [![license](https://img.shields.io/github/license/nhn/tui.editor.svg)](https://github.com/nhn/tui.editor/blob/master/LICENSE) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](https://github.com/nhn/tui.editor/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) [![code with hearth by NHN](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-NHN-ff1414.svg)](https://github.com/nhn)
 
+## Elemeno fork
+
+This fork has been modified to build a self-contained version of the Editor
+to be used in the Elemeno app (elemeno/elemeno-careteam)
+
+### Build it
+'''
+npm install
+npm run-script build
+'''
+
+### Copy build to elemeno-careteam
+
+Copy the build from /dist into the elemeno-careteam/addon-mdeditor folder. The build includes these files:
+
+* dist/tui-editor-Editor-full-no-jquery.js
+* dist/tui-editor-extScrollSync.js
+* dist/tui-editor.css
+* dist/tui-editor-contents.css
+* dist/tui-editor.png
+* dist/tui-editor-2x.png
+
 ## Wrappers
 
 - [toast-ui.vue-editor](https://github.com/nhn/toast-ui.vue-editor): Vue wrapper component is powered by [NHN](https://github.com/nhn).
